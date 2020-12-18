@@ -1,9 +1,13 @@
-import { User } from './models/User';
+import { Collection } from './models/Collection';
 
-const user = new User({ id: 1, name: 'newer name', age: 0 });
+const rootUrl = 'http://localhost:3000/users';
 
-user.on('save', () => {
-  console.log(user);
+const userCollection = new Collection(rootUrl);
+
+userCollection.on('change', () => {
+  console.log(userCollection);
 });
 
-user.save();
+userCollection.fetch();
+
+// console.log(userCollection.models);
