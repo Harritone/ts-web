@@ -2284,12 +2284,6 @@ function (_super) {
     });
   };
 
-  User.prototype.setName = function (name) {
-    this.set({
-      name: name
-    });
-  };
-
   return User;
 }(Model_1.Model);
 
